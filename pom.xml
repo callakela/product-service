@@ -26,6 +26,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+				  <mainClass>com.vs.ps.ProductServiceBoot</mainClass>
+				  <outputDirectory>webapps</outputDirectory>
                   <classifier>exec</classifier>
                </configuration>
 				<executions>
