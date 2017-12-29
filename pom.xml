@@ -1,13 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.swagger</groupId>
-	<artifactId>swagger-spring</artifactId>
+	<groupId>com.impetus</groupId>
+	<artifactId>Product-Service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>swagger-spring</name>
-	<version>1.0.0</version>
+	<name>Product-Service</name>
+	
+	
 	<properties>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<springfox-version>2.5.0</springfox-version>
@@ -71,10 +73,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast-hibernate -->
-		<!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast-hibernate -->
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-		<!-- https://mvnrepository.com/artifact/com.hazelcast/hazelcast-hibernate4 -->
+		
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast-hibernate4</artifactId>

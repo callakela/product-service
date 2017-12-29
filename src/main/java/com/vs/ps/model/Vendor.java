@@ -17,7 +17,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "VENDOR")
 @Cacheable
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-09-11T08:53:10.271Z")
 public class Vendor implements Serializable {
 
 	private static final long serialVersionUID = 1L;

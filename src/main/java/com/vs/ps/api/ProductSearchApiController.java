@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.vs.ps.dao.ProductDAO;
 import com.vs.ps.model.Product;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.SpringCodegen", date = "2016-09-11T08:53:10.271Z")
 @Controller
 public class ProductSearchApiController implements ProductSearchApi {
 

@@ -10,10 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
+//@EnableSwagger2
 @ComponentScan(basePackages = "com.vs.ps")
 @EnableCaching
-//@EnableDiscoveryClient
+
 public class ProductServiceBoot implements CommandLineRunner {
 
 	@Override
