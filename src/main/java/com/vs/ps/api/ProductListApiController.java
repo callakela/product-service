@@ -21,7 +21,7 @@ public class ProductListApiController implements ProductListApi {
 			@ApiParam(value = "product category", required = true) @RequestParam(value = "categoryId", required = true) Integer categoryId
 
 	) {
-		// do some magic!
+		
 		return new ResponseEntity<List<Product>>(HttpStatus.OK);
 	}
 

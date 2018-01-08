@@ -21,13 +21,34 @@ public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> getProductsByDescription(String searchText) {
-
-		return entityManager
-				.createQuery(
-						" from Product p WHERE p.description like :pattern")
-				.setParameter("pattern", "%" + searchText.trim() + "%")
-				.getResultList();
-
+		List<Product> prodList = null;
+		if (null != searchText && !searchText.contentEquals("*")) {
+			String textToSerach = null;
+			if (searchText.contains("*") && searchText.indexOf("*") == 0
+					&& searchText.lastIndexOf("*") != 0) {
+				textToSerach = searchText.substring(
+						searchText.indexOf("*") + 1,
+						searchText.lastIndexOf("*"));
+			} else if (null != searchText && searchText.contains("*")
+					&& searchText.indexOf("*") == 0) {
+				textToSerach = searchText
+						.substring(searchText.indexOf("*") + 1);
+			} else if (null != searchText && searchText.contains("*")
+					&& searchText.indexOf("*") != 0) {
+				textToSerach = searchText.substring(0, searchText.indexOf("*"));
+			} else {
+				textToSerach = searchText;
+			}
+			prodList = entityManager
+					.createQuery(
+							" from Product p WHERE p.description like :pattern")
+					.setParameter("pattern", "%" + textToSerach.trim() + "%")
+					.getResultList();
+		} else {
+			prodList = entityManager.createQuery(" from Product p")
+					.getResultList();
+		}
+		return prodList;
 	}
 
 }

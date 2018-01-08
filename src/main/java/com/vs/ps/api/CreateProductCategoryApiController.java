@@ -8,15 +8,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.vs.ps.dao.ProductCategoryDAO;
 import com.vs.ps.model.ProductCategory;
+import com.vs.ps.service.ProductCategoryService;
 
 @Controller
 public class CreateProductCategoryApiController implements
 		CreateProductCategoryApi {
-
+		
 	@Autowired
-	private ProductCategoryDAO productCategoryDAO;
+	ProductCategoryService productCategoryService;
 
 	public ResponseEntity<Integer> createProductCategoryPut(
 
@@ -26,7 +26,7 @@ public class CreateProductCategoryApiController implements
 
 		productCategory.setCategoryName(category);
 
-		productCategoryDAO.create(productCategory);
+		productCategoryService.create(productCategory);
 
 		return new ResponseEntity<Integer>(productCategory.getCategoryId(),
 				HttpStatus.OK);

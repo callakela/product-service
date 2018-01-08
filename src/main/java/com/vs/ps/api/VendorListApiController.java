@@ -7,17 +7,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
-import com.vs.ps.dao.VendorDAO;
 import com.vs.ps.model.Vendor;
+import com.vs.ps.service.VendorService;
 
 @Controller
 public class VendorListApiController implements VendorListApi {
 
 	@Autowired
-	private VendorDAO vendorDAO;
+	private VendorService vendorService;
 
 	public ResponseEntity<List<Vendor>> vendorListGet() {
-		return new ResponseEntity<List<Vendor>>(vendorDAO.getAllVendorList(),
+		return new ResponseEntity<List<Vendor>>(vendorService.getAllVendorList(),
 				HttpStatus.OK);
 	}
 

@@ -21,10 +21,11 @@ public interface CreateProductApi {
 			@ApiResponse(code = 200, message = "Product Created", response = Integer.class),
 			@ApiResponse(code = 200, message = "Unexpected error", response = Integer.class) })
 	@RequestMapping(value = "/createProduct", produces = { "application/json" }, method = RequestMethod.POST)
-	ResponseEntity<Integer> placeOrder(
+	ResponseEntity<Integer> createProduct(
 
 	@ApiParam(value = "Create aproduct") @RequestBody Product body
 
 	);
 
 }
+

@@ -10,20 +10,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.vs.ps.dao.ProductDAO;
 import com.vs.ps.model.Product;
+import com.vs.ps.service.ProductService;
 
 @Controller
 public class ProductSearchApiController implements ProductSearchApi {
-
+	
 	@Autowired
-	private ProductDAO productDAO;
+	private ProductService productService;
 
 	public ResponseEntity<List<Product>> searchAndGetProductListGet(
 			@ApiParam(value = "searchText", required = true) @RequestParam(value = "searchText", required = true) String searchText) {
 
 		return new ResponseEntity<List<Product>>(
-				productDAO.getProductsByDescription(searchText), HttpStatus.OK);
+				productService.getProductsByDescription(searchText), HttpStatus.OK);
 	}
 
 }

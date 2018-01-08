@@ -9,17 +9,19 @@ import org.springframework.stereotype.Controller;
 
 import com.vs.ps.dao.ProductCategoryDAO;
 import com.vs.ps.model.ProductCategory;
+import com.vs.ps.service.ProductCategoryService;
 
 @Controller
 public class ProductCategoryApiController implements ProductCategoryApi {
 
+	/*@Autowired
+	private ProductCategoryDAO productCategoryDAO;*/
 	@Autowired
-	private ProductCategoryDAO productCategoryDAO;
-
+    private ProductCategoryService productCategoryService;
 	public ResponseEntity<List<ProductCategory>> productCategoryGet() {
 
 		return new ResponseEntity<List<ProductCategory>>(
-				productCategoryDAO.getAll(), HttpStatus.OK);
+				productCategoryService.getAll(), HttpStatus.OK);
 	}
 
 }
